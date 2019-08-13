@@ -37,7 +37,8 @@
 <layout version="0.1.0">
     <default>
       <reference name="head">
-    
+
+       
       <!--ction method="addCss" ifconfig="bannerresponsive/bannertypecollection/bannertype" value="modernslide"><stylesheet>css/responsivebanner/sequencejs-theme.modern-slide-in.css</stylesheet></action>
        <action method="addItem" ifconfig="bannerresponsive/responsive/blockpostion"><type>skin_js</type><name>js/responsiveslider/jquerynocon.js</name></action>
        <action method="addItem" ifconfig="bannerresponsive/responsive/blockpostion"><type>skin_js</type><name>js/responsiveslider/jquery.js</name></action>
@@ -45,7 +46,7 @@
        
     -->
     
-   </reference>  
+</reference>  
     </default>
     <bannerresponsive_index_index>
         <reference name="content">

@@ -33,14 +33,11 @@
  */
  
 ?>
-<?php if($this->helper('bannerresponsive')->Isbannerenable() == 1 ):?>
-<?php  $countbanner = Mage::getModel('bannerresponsive/bannerresponsive')->getCollection();?>
-<?php if(count($countbanner)>0):?>
+<?php  if($this->helper('bannerresponsive')->Isbannerenable() == 1 ):?>
    <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/responsiveslider/jquery.js")?>'></script> 
    <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/responsiveslider/jquerynocon.js")?>'></script> 
 
-<?php 
-           if($this->helper('bannerresponsive')->Bannertype()== "bxslider") :  ?>
+           <?php if($this->helper('bannerresponsive')->Bannertype()== "bxslider") :  ?>
 <?php
 /*
  * added js and css  files you can also put this in xml file under refernces head
@@ -201,8 +198,6 @@ $collection = $this->getBannercollection("bxslider")
               ->addFieldToFilter('status','1');
 foreach($collection as $collection1)
 {
-    
-    echo $collection1['url'];
 ?>
 <li><a href="<?php if($collection1['url']) { echo $collection1['url']; }else { };?>"><img  <?php if($collection1['title']) { ?> title="<?php echo $collection1['title'];?>" <?php } ?>  src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>"/></a></li>
 
@@ -375,7 +370,7 @@ document.write(unescape('%3Cscript src="scripts/jquery-min.js" %3E%3C/script%3E'
                 <?php } ?>
 	</style>
     <link rel='stylesheet' id='camera-css'  href='<?php echo $this->getSkinUrl("css/responsivebanner/camera.css");?>' type='text/css'/> 
-   <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/scripts/jquery.mobile.customized.min.js")?>'></script>
+    <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/scripts/jquery.mobile.customized.min.js")?>'></script>
     <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/scripts/jquery.easing.1.3.js")?>'></script> 
     <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/scripts/camera.min.js")?>'></script>
     <script>
@@ -398,31 +393,30 @@ document.write(unescape('%3Cscript src="scripts/jquery-min.js" %3E%3C/script%3E'
 
 		
 		});
+         
+
 	</script>
  
 
 
     
-	<div class="fluid_container">
+	<div class="fluid_container" >
         <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
             <?php foreach($collection as $collection1) { ?>
-            <div data-thumb="<?php echo Mage::getBaseUrl("media").'bannerimages/thumbs/'.$collection1['filename'] ?>" data-src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>">
+           <div  data-thumb="<?php echo Mage::getBaseUrl("media").'bannerimages/thumbs/'.$collection1['filename'] ?>" data-src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>"
+                 data-link="<?php echo $collection1->getUrl(); ?>" data-target="_new"
+                 >
                 <div class="camera_caption fadeFromBottom">
                 <?php if($collection1):?>
                 <?php echo $collection1['content']; ?>
                 <?php endif;?>
                 </div>
             </div>
-               
-            <?php } ?>
+           <?php } ?>
            
         </div><!-- #camera_wrap_1 -->
 
 
     </div><!-- .fluid_container -->
 <?php endif;?>
-<?php else:?>
-<div id="messages_product_view"><ul class="messages"><li class="error-msg"><ul><li><span><?php echo Mage::helper("bannerresponsive")->getNobannermessage(); ?></span></li></ul></li></ul></div>
- <?php endif;?>
 <?php endif;?>
-    

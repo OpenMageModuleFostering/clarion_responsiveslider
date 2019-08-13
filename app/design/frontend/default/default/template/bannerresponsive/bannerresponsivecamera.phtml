@@ -34,8 +34,9 @@
  
 ?>
 <?php  if($this->helper('bannerresponsive')->Isbannerenable() == 1 ):?>
-<?php  $countbanner = Mage::getModel('bannerresponsive/bannerresponsive')->getCollection();?>
-<?php if(count($countbanner)>0):?>
+ <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/responsiveslider/jquery.js")?>'></script> 
+ <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/responsiveslider/jquerynocon.js")?>'></script> 
+
 <?php  
    $collection = $this->getBannercollection("cameraslider")
                   ->setOrder('orderid','ASC')
@@ -105,7 +106,8 @@
 	<div class="fluid_container">
         <div class="camera_wrap camera_azure_skin" id="camera_wrap_sepeearatecamera">
             <?php foreach($collection as $collection1) { ?>
-            <div data-thumb="<?php echo Mage::getBaseUrl("media").'bannerimages/thumbs/'.$collection1['filename'] ?>" data-src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>">
+            <div data-thumb="<?php echo Mage::getBaseUrl("media").'bannerimages/thumbs/'.$collection1['filename'] ?>" data-src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>"
+                  data-link="<?php echo $collection1->getUrl(); ?>" data-target="_new">
                 <div class="camera_caption fadeFromBottom">
                 <?php if($collection1):?>
                 <?php echo $collection1['content']; ?>
@@ -118,7 +120,4 @@
 
 
     </div><!-- .fluid_container -->
-<?php else:?>
-<div id="messages_product_view"><ul class="messages"><li class="error-msg"><ul><li><span><?php echo Mage::helper("bannerresponsive")->getNobannermessage(); ?></span></li></ul></li></ul></div>
- <?php endif;?>
 <?php endif;?>

@@ -34,8 +34,9 @@
  
 ?>
 <?php  if($this->helper('bannerresponsive')->Isbannerenable() == 1 ):?>
-<?php  $countbanner = Mage::getModel('bannerresponsive/bannerresponsive')->getCollection();?>
-<?php if(count($countbanner)>0):?>
+<script type='text/javascript' src='<?php echo $this->getSkinUrl("js/responsiveslider/jquery.js")?>'></script> 
+<script type='text/javascript' src='<?php echo $this->getSkinUrl("js/responsiveslider/jquerynocon.js")?>'></script> 
+
 <?php
 /*
  * added js and css  files you can also put this in xml file under refernces head
@@ -116,7 +117,9 @@ document.write(unescape('%3Cscript src="scripts/jquery-min.js" %3E%3C/script%3E'
 <?php if($collection1['content']):?>
 <h3 class="subtitle"><?php echo $collection1['content']; ?></h3>
 <?php endif;?>
+<a href="<?php if($collection1['url']) { echo $collection1['url']; }else { };?>">
 <img class="model" src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>"/>
+</a>
 </li>
 <?php } ?>
 <!--	<li class="animate-in">
@@ -137,7 +140,4 @@ document.write(unescape('%3Cscript src="scripts/jquery-min.js" %3E%3C/script%3E'
 
 </div>
 </div>
-<?php else:?>
-<div id="messages_product_view"><ul class="messages"><li class="error-msg"><ul><li><span><?php echo Mage::helper("bannerresponsive")->getNobannermessage(); ?></span></li></ul></li></ul></div>
- <?php endif;?>
 <?php endif;?>

@@ -162,10 +162,7 @@
     
     <default>
         <bannerresponsive>
-            <responsive>
-                <blockpostion>1</blockpostion>
-            </responsive>
-            <modersslidersetting>
+       <modersslidersetting>
                <nextButton>true</nextButton> 
                <prevButton>true</prevButton>
                <autoPlay>true</autoPlay>
@@ -189,7 +186,7 @@
         
              <forallbannersmessage>
                 <messagenobanner>Sorry There Are No Banners ,Please Add Banners</messagenobanner>    
-            </forallbannersmessage>
+            </forallbannersmessage>		
         </bannerresponsive>
    </default>
 </config>
