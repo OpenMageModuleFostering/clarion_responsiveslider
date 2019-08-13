@@ -3,7 +3,7 @@
     <modules>
         <Clarion_Bannerresponsive>
             <active>true</active>
-            <codePool>local</codePool>
+            <codePool>community</codePool>
         </Clarion_Bannerresponsive>
     </modules>
 </config> 
