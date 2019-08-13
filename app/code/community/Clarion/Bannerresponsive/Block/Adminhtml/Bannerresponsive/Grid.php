@@ -65,32 +65,42 @@ class Clarion_Bannerresponsive_Block_Adminhtml_Bannerresponsive_Grid extends Mag
           'align'     =>'left',
           'index'     => 'title',
       ));
- $this->addColumn('filename', array(
-          'header'    => Mage::helper('bannerresponsive')->__('Image'),
+      
+       $this->addColumn('orderid', array(
+          'header'    => Mage::helper('bannerresponsive')->__('Order'),
           'align'     =>'left',
-          'index'     => 'filename',
-          'renderer'  => ''
+          'index'     => 'orderid',
+           'width'     => '10px',
       ));
- 
- $this->addColumn('filename', array(
-            'header'    => Mage::helper('bannerresponsive')->__('Image'),
-            'align'     => 'left',
-            'width'     => '100px',
-            'index'     => 'filename',
-            'type'      => 'image',
-            'escape'    => true,
-            'sortable'  => false,
-            'filter'    => false,
-            'renderer'  => new Clarion_Bannerresponsive_Block_Adminhtml_Grid_Renderer_Image,
-        ));
+       
 
-	  /*
-      $this->addColumn('content', array(
-			'header'    => Mage::helper('bannerresponsive')->__('Item Content'),
-			'width'     => '150px',
-			'index'     => 'content',
+       
+      $this->addColumn('nubersliderbt', array(
+          'header'    => Mage::helper('bannerresponsive')->__('Slider Type'),
+          'align'     => 'left',
+          'width'     => '80px',
+          'index'     => 'nubersliderbt',
+          'type'      => 'options',
+          'options'   => array(
+              'bxslider' => 'Bxslider',
+              'modernslide' => 'Modernslide',
+              'cameraslider' =>'Camera Banner'
+          ),
       ));
-	  */
+      
+     $this->addColumn('filename', array(
+                'header'    => Mage::helper('bannerresponsive')->__('Image'),
+                'align'     => 'left',
+                'width'     => '100px',
+                'index'     => 'filename',
+                'type'      => 'image',
+                'align'     => 'center',
+                'escape'    => true,
+                'sortable'  => false,
+                'filter'    => false,
+                'renderer'  => new Clarion_Bannerresponsive_Block_Adminhtml_Grid_Renderer_Image,
+            ));
+
 
       $this->addColumn('status', array(
           'header'    => Mage::helper('bannerresponsive')->__('Status'),

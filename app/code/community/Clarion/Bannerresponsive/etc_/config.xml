@@ -67,7 +67,7 @@
 				<sort_order>71</sort_order>               
 				<children>
 					<items module="bannerresponsive">
-						<title>Manage Slideshow</title>
+						<title>Manage Items</title>
 						<sort_order>0</sort_order>
 						<action>bannerresponsive/adminhtml_bannerresponsive</action>
 					</items>
@@ -159,37 +159,4 @@
             </bannerresponsive>
         </helpers>
     </global>
-    
-    <default>
-        <bannerresponsive>
-            <responsive>
-                <blockpostion>1</blockpostion>
-            </responsive>
-            <modersslidersetting>
-               <nextButton>true</nextButton> 
-               <prevButton>true</prevButton>
-               <autoPlay>true</autoPlay>
-            </modersslidersetting>
-             <responsivegeneral>
-                <speed>3000</speed>
-               <modemode>horizontal</modemode>
-                <caption>true</caption>
-                <randomStart>false</randomStart>
-                <daptiveheight>true</daptiveheight>
-                <slideWidth>800</slideWidth>
-                <pager>true</pager>
-                <controls>true</controls>
-                 <auto>true</auto>
-            </responsivegeneral>
-            <cameraslider>
-		<hights>500</hights>		
-                <time>5000</time>   
-                <transPeriod>2000</transPeriod>
-            </cameraslider>
-        
-             <forallbannersmessage>
-                <messagenobanner>Sorry There Are No Banners ,Please Add Banners</messagenobanner>    
-            </forallbannersmessage>
-        </bannerresponsive>
-   </default>
 </config>

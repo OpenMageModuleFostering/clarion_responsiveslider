@@ -1,4 +1,5 @@
-<?php
+<?xml version="1.0"?>
+<!--
 /**
  * Magento
  *
@@ -23,23 +24,29 @@
  * @copyright   Copyright magento@clariontechnologies.co.in
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-
-
-/**
- * Admin banner resposive block
- *
- * @category   Community
- * @package    Clarion_Bannerresponsive
- * @author     magento@clariontechnologies.co.in
- */
-class Clarion_Bannerresponsive_Block_Adminhtml_Bannerresponsive extends Mage_Adminhtml_Block_Widget_Grid_Container
-{
-  public function __construct()
-  {
-    $this->_controller = 'adminhtml_bannerresponsive';
-    $this->_blockGroup = 'bannerresponsive';
-    $this->_headerText = Mage::helper('bannerresponsive')->__('Slideshow Manager');
-    $this->_addButtonLabel = Mage::helper('bannerresponsive')->__('Add Slide');
-    parent::__construct();
-  }
-}
+-->
+<config>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <bannerresponsive>
+                                        <title>bannerresponsive</title>
+                                    </bannerresponsive>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+  
+</config>

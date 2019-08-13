@@ -607,7 +607,8 @@
 							<can_be_empty>1</can_be_empty>
                                                         <source_model>bannerresponsive/camerafx</source_model>
 						</fx>	
-					
+					</fields>
+                                           <fields>
 						<hights  translate="label">
 							<label>Banner Height</label>
 							<frontend_type>text</frontend_type>
@@ -617,7 +618,10 @@
 							<show_in_store>1</show_in_store>
 							<can_be_empty>1</can_be_empty>
 						</hights>	
-					
+					</fields>
+                                        
+                                        
+                                           <fields>
 						<loader  translate="label">
 							<label>Banner Loader Type</label>
 							<frontend_type>select</frontend_type>
@@ -628,7 +632,10 @@
 							<can_be_empty>1</can_be_empty>
                                                         <source_model>bannerresponsive/cameraloader</source_model>
 						</loader>	
-					
+					</fields>
+                                        
+                                        
+                                           <fields>
 						<piePosition   translate="label">
 							<label>Banner piePosition's</label>
 							<frontend_type>select</frontend_type>
@@ -639,7 +646,10 @@
 							<can_be_empty>1</can_be_empty>
                                                         <source_model>bannerresponsive/camerapieposition</source_model>
 						</piePosition>	
-					
+					</fields>
+                                        
+                                        
+                                           <fields>
 						<pagination  translate="label">
 							<label>Banner pagination</label>
 							<frontend_type>select</frontend_type>
@@ -652,7 +662,10 @@
                                                         <source_model>bannerresponsive/truefalseall</source_model>
 
 						</pagination>	
-					
+					</fields>
+                                        
+                                        
+                                           <fields>
 						<time  translate="label">
 							<label>Time</label>
                                                         <comment>//milliseconds between the end of the sliding effect and the start of the nex one</comment>
@@ -663,7 +676,10 @@
 							<show_in_store>1</show_in_store>
 							<can_be_empty>1</can_be_empty>
 						</time>	
-					
+					</fields>
+                                        
+                                        
+                                           <fields>
 						<transPeriod  translate="label">
 							<label>Time of transperiod</label>
                                                         <comment>lenght of the sliding effect in milliseconds</comment>
@@ -674,7 +690,11 @@
 							<show_in_store>1</show_in_store>
 							<can_be_empty>1</can_be_empty>
 						</transPeriod>	
-					
+					</fields>
+                                        
+                                        
+                                        
+                                           <fields>
 						<barPosition  translate="label">
 							<label>Banner barPosition</label>
                                                         <comment>'bottom', 'left', 'top', 'right'</comment>
@@ -686,7 +706,8 @@
 							<can_be_empty>1</can_be_empty>
                                                         <source_model>bannerresponsive/camerabarposistion</source_model>
 						</barPosition>	
-					
+					</fields>
+                                           <fields>
 						<playPause  translate="label">
 							<label>play/pause buttons</label>
 							<frontend_type>select</frontend_type>
@@ -700,7 +721,10 @@
                                                   <source_model>bannerresponsive/truefalseall</source_model>
 
 						</playPause>	
-					
+					</fields>
+                               
+                                         
+                                           <fields>
 						<thumbnails  translate="label">
 							<label>thumbnails</label>
                                                         <comment>true, false</comment>
@@ -712,7 +736,9 @@
 							<can_be_empty>1</can_be_empty>
                                                         <source_model>bannerresponsive/truefalseall</source_model>
                                                 </thumbnails>	
-					
+					</fields>
+                                        
+                                         <fields>
 						<bardirection  translate="label">
 							<label>bardirection</label>
                                                         <comment>'leftToRight', 'rightToLeft', 'topToBottom', 'bottomToTop'</comment>
@@ -724,7 +750,8 @@
 							<can_be_empty>1</can_be_empty>
                                                         <source_model>bannerresponsive/camerabardirection</source_model>
                                                 </bardirection>	
-					
+					</fields>
+                                         <fields>
                                     
                                                    <aerrowimage translate="label">
                                                         <label>Aerrow Image</label>
@@ -741,28 +768,11 @@
                                        
                             </cameraslider>		
 			    
-                            <forallbannersmessage translate="label" module="bannerresponsive">
-                                       	<label>Display Messge Block</label>
-					<frontend_type>text</frontend_type>
-					<sort_order>73</sort_order>
-					<show_in_default>1</show_in_default>
-					<show_in_website>1</show_in_website>
-					<show_in_store>1</show_in_store>
-                                          <fields>
-                                                  <messagenobanner translate="label">
-                                                        <label>Display Message</label>
-                                                        <comment>Please Put Your Message Which You Can Display
-                                                        When There Are No Banners Have In Database.</comment>
-                                                        <frontend_type>text</frontend_type>
-                                                        <sort_order>1</sort_order>
-                                                        <show_in_default>1</show_in_default>
-                                                        <show_in_website>1</show_in_website>
-                                                        <show_in_store>1</show_in_store>
-                                                 </messagenobanner> 
-                                          </fields>
-                            
+                                
+         
+                     
                                         
-                              </forallbannersmessage>             
+                                           
                                     
 			</groups>        
                         

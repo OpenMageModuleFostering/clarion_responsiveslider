@@ -57,4 +57,10 @@ class Clarion_Bannerresponsive_Helper_Data extends Mage_Core_Helper_Abstract
 
    }
    
+     public function getNobannermessage()
+   {
+      return  Mage::getStoreConfig('bannerresponsive/forallbannersmessage/messagenobanner');
+
+   }
+   
 }

@@ -34,9 +34,13 @@
  
 ?>
 <?php  if($this->helper('bannerresponsive')->Isbannerenable() == 1 ):?>
+<?php  $countbanner = Mage::getModel('bannerresponsive/bannerresponsive')->getCollection();?>
+<?php if(count($countbanner)>0):?>
 <?php  
    $collection = $this->getBannercollection("cameraslider")
-                  ->setOrder('orderid','ASC');?>
+                  ->setOrder('orderid','ASC')
+                  ->addFieldToFilter('status','1');
+  ?>
     <style>
 		
 		#back_to_camera {
@@ -52,9 +56,22 @@
 			width: 90%;
 		}
                 
+                  
+                <?php if(Mage::getStoreConfig('bannerresponsive/cameraslider/aerrowimage'))  {  ?>
                 .camera_prev > span {background: url("<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/cameraslider/aerrowimage');?>") no-repeat 0 0;
                                      display: block;height: 40px;width: 40px;}
-                .camera_next > span{background: url("<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/cameraslider/aerrowimage');?>") no-repeat 0 0;display: block;height: 40px;width: 40px;}
+                <?php  }else{?>
+                .camera_prev > span {background: url("<?php echo $this->getSkinUrl("images/camera_skins.png");?>") no-repeat 0 0;
+                                     display: block;height: 40px;width: 40px;}
+                <?php } ?>
+                <?php if(Mage::getStoreConfig('bannerresponsive/cameraslider/aerrowimage'))  {  ?>
+              .camera_next > span{background: url("<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/cameraslider/aerrowimage');?>") no-repeat 0 0;
+                                 display: block;height: 40px;width: 40px;}
+
+                <?php  }else{?>
+              .camera_next > span{background: url("<?php echo $this->getSkinUrl("images/camera_skins.png");?>") no-repeat 0 0;
+                                 display: block;height: 40px;width: 40px;}
+                <?php } ?>
 	</style>
     <link rel='stylesheet' id='camera-css'  href='<?php echo $this->getSkinUrl("css/responsivebanner/camera.css");?>' type='text/css'/> 
    <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/scripts/jquery.mobile.customized.min.js")?>'></script>
@@ -101,4 +118,7 @@
 
 
     </div><!-- .fluid_container -->
+<?php else:?>
+<div id="messages_product_view"><ul class="messages"><li class="error-msg"><ul><li><span><?php echo Mage::helper("bannerresponsive")->getNobannermessage(); ?></span></li></ul></li></ul></div>
+ <?php endif;?>
 <?php endif;?>

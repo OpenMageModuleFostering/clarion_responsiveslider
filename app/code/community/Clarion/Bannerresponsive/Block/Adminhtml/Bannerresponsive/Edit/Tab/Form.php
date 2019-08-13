@@ -59,7 +59,16 @@ class Clarion_Bannerresponsive_Block_Adminhtml_Bannerresponsive_Edit_Tab_Form ex
           'name'      => 'orderid',
       ));
       
+            
+      $fieldset->addField('url', 'text', array(
+          'label'     => Mage::helper('bannerresponsive')->__('Url'),
+          'required'  => false,
+          'name'      => 'url',
+      ));
+      
+      
       $currentbannerdata = Mage::registry('bannerresponsive_data')->getData();
+      if(isset($currentbannerdata['filename'])) {
       $banner_image = $currentbannerdata['filename'];
       $imgvalue = '<img src="'.Mage::getBaseUrl("media").'bannerimages/thumbs/'.$banner_image.'"/>';
       if($banner_image){
@@ -70,6 +79,7 @@ class Clarion_Bannerresponsive_Block_Adminhtml_Bannerresponsive_Edit_Tab_Form ex
               'note'      => $imgvalue,
               ));
       }
+     } 
      else {
           $fieldset->addField('filename', 'file', array(
           'label'     => Mage::helper('bannerresponsive')->__('File'),
@@ -78,7 +88,7 @@ class Clarion_Bannerresponsive_Block_Adminhtml_Bannerresponsive_Edit_Tab_Form ex
           ));
           }
 
-
+      
        
       $fieldset->addField('status', 'select', array(
           'label'     => Mage::helper('bannerresponsive')->__('Status'),

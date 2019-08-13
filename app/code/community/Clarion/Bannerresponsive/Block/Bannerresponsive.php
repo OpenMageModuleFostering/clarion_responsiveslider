@@ -158,6 +158,8 @@ class Clarion_Bannerresponsive_Block_Bannerresponsive extends Mage_Core_Block_Te
 
     $collection = Mage::getModel('bannerresponsive/bannerresponsive')->getCollection()
                        ->addFieldToFilter("nubersliderbt",$getbanner);
+    
+   
     return     $collection;
     }
 

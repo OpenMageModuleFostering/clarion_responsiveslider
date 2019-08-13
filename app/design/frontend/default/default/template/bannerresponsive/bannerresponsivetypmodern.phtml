@@ -34,6 +34,8 @@
  
 ?>
 <?php  if($this->helper('bannerresponsive')->Isbannerenable() == 1 ):?>
+<?php  $countbanner = Mage::getModel('bannerresponsive/bannerresponsive')->getCollection();?>
+<?php if(count($countbanner)>0):?>
 <?php
 /*
  * added js and css  files you can also put this in xml file under refernces head
@@ -51,7 +53,9 @@
  */?>
 
 <?php    $collection = $this->getBannercollection("modernslide")
-                       ->setOrder('orderid','ASC');?>
+                       ->setOrder('orderid','ASC')
+                       ->addFieldToFilter('status','1'); 
+?>
 <?php 
 /*
 *  get all admin defined value for modern slider banner
@@ -92,8 +96,17 @@ document.write(unescape('%3Cscript src="scripts/jquery-min.js" %3E%3C/script%3E'
     
     
 
+<?php if(Mage::getStoreConfig('bannerresponsive/modersslidersetting/aerrowleftmodernimage'))  {  ?>
 <img class="sequence-prev" src="<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/modersslidersetting/aerrowleftmodernimage');?>" alt="Previous Frame" />
+<?php } else {?>
+<img class="sequence-prev" src="<?php echo $this->getSkinUrl("images/bt-prev.png")?>" alt="Previous Frame" />
+<?php } ?>
+
+<?php if(Mage::getStoreConfig('bannerresponsive/modersslidersetting/aerrowrightmodernimage'))  {  ?>
 <img class="sequence-next" src="<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/modersslidersetting/aerrowrightmodernimage');?>" alt="Next Frame" />
+<?php } else {?>
+<img class="sequence-next" src="<?php echo $this->getSkinUrl("images/bt-next.png")?>" alt="Previous Frame" />
+<?php } ?>
 
 <ul class="sequence-canvas">
 <?php $i=0;foreach($collection as $collection1) 
@@ -103,7 +116,8 @@ document.write(unescape('%3Cscript src="scripts/jquery-min.js" %3E%3C/script%3E'
 <?php if($collection1['content']):?>
 <h3 class="subtitle"><?php echo $collection1['content']; ?></h3>
 <?php endif;?>
-<img class="model" src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>"/></li>
+<img class="model" src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>"/>
+</li>
 <?php } ?>
 <!--	<li class="animate-in">
 <h2 class="title">Built using Sequence.js</h2>
@@ -123,4 +137,7 @@ document.write(unescape('%3Cscript src="scripts/jquery-min.js" %3E%3C/script%3E'
 
 </div>
 </div>
+<?php else:?>
+<div id="messages_product_view"><ul class="messages"><li class="error-msg"><ul><li><span><?php echo Mage::helper("bannerresponsive")->getNobannermessage(); ?></span></li></ul></li></ul></div>
+ <?php endif;?>
 <?php endif;?>

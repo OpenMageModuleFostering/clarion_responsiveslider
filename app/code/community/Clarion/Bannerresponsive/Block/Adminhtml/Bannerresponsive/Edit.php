@@ -43,8 +43,8 @@ class Clarion_Bannerresponsive_Block_Adminhtml_Bannerresponsive_Edit extends Mag
         $this->_blockGroup = 'bannerresponsive';
         $this->_controller = 'adminhtml_bannerresponsive';
         
-        $this->_updateButton('save', 'label', Mage::helper('bannerresponsive')->__('Save Item'));
-        $this->_updateButton('delete', 'label', Mage::helper('bannerresponsive')->__('Delete Item'));
+        $this->_updateButton('save', 'label', Mage::helper('bannerresponsive')->__('Save Slide'));
+        $this->_updateButton('delete', 'label', Mage::helper('bannerresponsive')->__('Delete Slide'));
 		
         $this->_addButton('saveandcontinue', array(
             'label'     => Mage::helper('adminhtml')->__('Save And Continue Edit'),
@@ -72,7 +72,7 @@ class Clarion_Bannerresponsive_Block_Adminhtml_Bannerresponsive_Edit extends Mag
         if( Mage::registry('bannerresponsive_data') && Mage::registry('bannerresponsive_data')->getId() ) {
             return Mage::helper('bannerresponsive')->__("Edit Item '%s'", $this->htmlEscape(Mage::registry('bannerresponsive_data')->getTitle()));
         } else {
-            return Mage::helper('bannerresponsive')->__('Add Item');
+            return Mage::helper('bannerresponsive')->__('Add Slide');
         }
     }
 }
