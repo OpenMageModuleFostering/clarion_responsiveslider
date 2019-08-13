@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <bannerresponsive_adminhtml_bannerresponsive_index>
+        <reference name="content">
+            <block type="bannerresponsive/adminhtml_bannerresponsive" name="bannerresponsive" />
+        </reference>
+    </bannerresponsive_adminhtml_bannerresponsive_index>
+</layout>

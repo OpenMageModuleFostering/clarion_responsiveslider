@@ -1,0 +1,756 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <clarion translate="label" module="bannerresponsive">
+            <label>Responsive Banner Configuration</label>
+            <sort_order>100</sort_order>
+        </clarion>
+    </tabs>
+	<sections>
+		<bannerresponsive translate="label" module="bannerresponsive">
+			<label>Banner Configuration</label>
+			<tab>clarion</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>777</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+                		<responsive translate="label" module="bannerresponsive">
+					<label>Enable or Disable</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>40</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<blockpostion translate="label">
+							<label>Enable:</label>
+							<comment></comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>110</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+                                                        <source_model>adminhtml/system_config_source_yesno</source_model>
+							<!--<source_model>allcurrency/type</source_model>-->
+						</blockpostion>	
+					</fields>
+                                        
+                                   </responsive>
+                                   
+                                   
+                                   
+                                   <modersslidersetting translate="label" module="bannerresponsive">
+					<label>Modern slider banner</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>43</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+			                           <nextButton translate="label">     <label>nextButton</label>
+							<comment>set true/false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+							<!--<source_model>allcurrency/type</source_model>-->
+						</nextButton>	
+					</fields>
+                                        
+                                        	<fields>
+						<prevButton translate="label">
+							<label>prevButton</label>
+							<comment>set true/false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>111</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+							<!--<source_model>allcurrency/type</source_model>-->
+						</prevButton>	
+					</fields>
+                
+                                       	<fields>
+						<animateStartingFrameIn translate="label">
+							<label>animateStartingFrameIn</label>
+							<comment>set true/false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>112</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+							<!--<source_model>allcurrency/type</source_model>-->
+						</animateStartingFrameIn>	
+					</fields>
+                                        
+                                        	    	<fields>
+						<autoPlay translate="label">
+							<label>autoPlay:</label>
+							<comment>set true/false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>113</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+							<!--<source_model>allcurrency/type</source_model>-->
+						</autoPlay>	
+					</fields>
+                                        
+                                            	<fields>
+						<autoPlayDelay translate="label">
+							<label>autoPlayDelay:</label>
+							<comment>set speed is mili second</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>114</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+							<!--<source_model>allcurrency/type</source_model>-->
+						</autoPlayDelay>	
+					</fields>
+                                       	<fields>
+						<preloader translate="label">
+							<label>preloader:</label>
+							<comment>set true/false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>115</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+							<!--<source_model>allcurrency/type</source_model>-->
+						</preloader>	
+					</fields>
+                                        	<fields>
+						<pagination translate="label">
+							<label>pagination</label>
+							<comment>set true/false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>116</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+							<!--<source_model>allcurrency/type</source_model>-->
+						</pagination>	
+					</fields>
+                                        
+                                        <fields>
+                                    
+                                                   <aerrowleftmodernimage translate="label">
+                                                        <label>Aerrow Left Image</label>
+                                                        <frontend_type>image</frontend_type>
+                                                        <backend_model>adminhtml/system_config_backend_image</backend_model>
+                                                        <upload_dir config="system/filesystem/media" scope_info="1">adam/images</upload_dir>
+                                                        <base_url type="media" scope_info="1">adam/images</base_url>
+                                                        <sort_order>117</sort_order>
+                                                        <show_in_default>1</show_in_default>
+                                                        <show_in_website>1</show_in_website>
+                                                        <show_in_store>1</show_in_store>
+                                                 </aerrowleftmodernimage>
+                                        </fields>
+                                       
+                                       <fields>
+                                    
+                                                   <aerrowrightmodernimage translate="label">
+                                                        <label>Aerrow Right Image</label>
+                                                        <frontend_type>image</frontend_type>
+                                                        <backend_model>adminhtml/system_config_backend_image</backend_model>
+                                                        <upload_dir config="system/filesystem/media" scope_info="1">adam/images</upload_dir>
+                                                        <base_url type="media" scope_info="1">adam/images</base_url>
+                                                        <sort_order>118</sort_order>
+                                                        <show_in_default>1</show_in_default>
+                                                        <show_in_website>1</show_in_website>
+                                                        <show_in_store>1</show_in_store>
+                                                 </aerrowrightmodernimage>
+                                        </fields>
+                                       
+                                   </modersslidersetting>
+                                   
+                             <bannertypecollection translate="label" module="bannerresponsive">
+                                       	<label>Banner Type Selection</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>41</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+                                        
+                                        <fields>
+						<bannertype  translate="label">
+							<label>Select Banner Slider Type</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>111</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+                                                        <source_model>bannerresponsive/typebanners</source_model>
+						</bannertype>	
+					</fields>	
+                                        
+              
+                                        
+                            </bannertypecollection>		
+			    
+                            
+                                   <commonbxslider translate="label" module="bannerresponsive">
+                                       	<label>Bx Slider Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>42</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+                                            <fields>
+						<bannereffectoptions  translate="label">
+							<label>Type Of banner</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>114</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+                                                        <source_model>bannerresponsive/bannereffectoption</source_model>
+						</bannereffectoptions>	
+					</fields>
+                                        
+                            </commonbxslider>		
+			    
+                                        
+                             
+                		<responsivegeneral translate="label" module="bannerresponsive">>
+					<label>General(Bx Slider)</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>50</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>           
+                                        
+                                          <fields>
+						<speed  translate="label">
+							<label>speed</label>
+                                                        <comment>time in milisecond</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>115</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</speed>	
+					</fields>
+                                        
+                                              <fields>
+						<mode  translate="label">
+							<label>mode</label>
+                                                        <comment>fade/horizontal,vertcal</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>115</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</mode>	
+					</fields>
+                                           <fields>
+						<caption  translate="label">
+							<label>caption</label>
+                                                        <comment>true / false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>115</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</caption>	
+					</fields>
+                                          <fields>
+						<randomStart  translate="label">
+							<label>randomStart</label>
+                                                        <comment>true / false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>116</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</randomStart>	
+					</fields>
+                                        
+                  
+                                  
+                                             <fields>
+						<responsive  translate="label">
+							<label>responsive</label>
+                                                        <comment>true / false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>119</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</responsive>	
+					</fields>
+                                         <fields>
+						<adaptiveheight  translate="label">
+							<label>adaptiveHeight</label>
+                                                        <comment>true/false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>119</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</adaptiveheight>	
+					</fields>
+                                          <fields>
+						<minslides  translate="label">
+							<label>minslides</label>
+                                                         <comment>integer</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</minslides>	
+					</fields>
+                                        
+                                            <fields>
+						<maxSlides  translate="label">
+							<label>maxSlides</label>
+                                                          <comment>integer</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>121</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</maxSlides>	
+					</fields>
+                                        
+                                            <fields>
+						<moveSlides  translate="label">
+							<label>moveSlides</label>
+                                                          <comment>integer</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>122</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</moveSlides>	
+					</fields>
+                                        
+                                        
+                                            <fields>
+						<slideWidth  translate="label">
+							<label>slideWidth</label>
+                                                        <comment>integer</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>123</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</slideWidth>	
+					</fields>
+                                          <fields>
+						<pager  translate="label">
+							<label>pager</label>
+                                                        <comment>true/false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>124</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</pager>	
+					</fields>
+
+                                            <fields>
+						<pagerType  translate="label">
+							<label>pagerType</label>
+                                                          <comment>short/full</comment>
+                                           
+							<frontend_type>text</frontend_type>
+							<sort_order>125</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</pagerType>	
+					</fields>
+                                        
+                                            <fields>
+						<pagerShortSeparator  translate="label">
+							<label>pagerShortSeparator</label>
+                                                         <comment>' / ' or string</comment>
+                                                        <frontend_type>text</frontend_type>
+							<sort_order>126</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</pagerShortSeparator>	
+					</fields>
+                                            <fields>
+						<pager  translate="label">
+							<label>pager</label>
+                                                        <comment>true/false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>127</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</pager>	
+					</fields>
+
+                                            <fields>
+						<pagerType  translate="label">
+							<label>pagerType</label>
+                                                          <comment>short/full</comment>
+                                           
+							<frontend_type>text</frontend_type>
+							<sort_order>128</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</pagerType>	
+					</fields>
+                                        
+                                            <fields>
+						<pagerShortSeparator  translate="label">
+							<label>pagerShortSeparator</label>
+                                                         <comment>' / ' or string</comment>
+                                                        <frontend_type>text</frontend_type>
+							<sort_order>129</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</pagerShortSeparator>	
+					</fields>
+                                        
+                                         <fields>
+						<controls  translate="label">
+							<label>controls</label>
+                                                        <comment>true/false to controll left right buttuon</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>130</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</controls>	
+					</fields>
+                                        
+                                            <fields>
+						<nextText  translate="label">
+							<label>nextText</label>
+                                                        <comment>custom nexttext string</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>131</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</nextText>	
+					</fields>
+                                        
+                                            <fields>
+						<prevText  translate="label">
+							<label>prevText</label>
+                                                        <comment>custom prevttext string</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>132</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</prevText>	
+					</fields>
+                                        
+                                        
+                                          
+                                        
+                                            <fields>
+						<autoControls  translate="label">
+							<label>autoControls</label>
+                                                         <comment>true / false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>133</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</autoControls>	
+					</fields>
+                                        <fields>
+						<auto  translate="label">
+							<label>auto</label>
+                                                        <comment>true / false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>134</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</auto>	
+					</fields>
+                                        
+                                            <fields>
+						<pause  translate="label">
+							<label>pause</label>
+                                                        <comment>time in mili second</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>135</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</pause>	
+					</fields>
+                                        
+                                            <fields>
+						<autoStart  translate="label">
+							<label>autoStart</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>136</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</autoStart>	
+					</fields>
+                                        
+                                        
+                                            <fields>
+						<autoDirection  translate="label">
+							<label>autoDirection</label>
+                                                        <comment>prev / next</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>137</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</autoDirection>	
+					</fields>
+                                            <fields>
+						<hidecontrolend  translate="label">
+							<label>hidecontrolend</label>
+                                                        <comment>true / false</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>138</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</hidecontrolend>	
+					</fields>
+                                     </responsivegeneral>
+      
+                                    
+                                    
+                              
+                                   <cameraslider translate="label" module="bannerresponsive">
+                                       	<label>Camera Slider Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>72</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+                                          <fields>
+						<fx  translate="label">
+							<label>Banner Effects</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>114</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+                                                        <source_model>bannerresponsive/camerafx</source_model>
+						</fx>	
+					</fields>
+                                           <fields>
+						<hights  translate="label">
+							<label>Banner Height</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>115</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</hights>	
+					</fields>
+                                        
+                                        
+                                           <fields>
+						<loader  translate="label">
+							<label>Banner Loader Type</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>116</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+                                                        <source_model>bannerresponsive/cameraloader</source_model>
+						</loader>	
+					</fields>
+                                        
+                                        
+                                           <fields>
+						<piePosition   translate="label">
+							<label>Banner piePosition's</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>117</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+                                                        <source_model>bannerresponsive/camerapieposition</source_model>
+						</piePosition>	
+					</fields>
+                                        
+                                        
+                                           <fields>
+						<pagination  translate="label">
+							<label>Banner pagination</label>
+							<frontend_type>select</frontend_type>
+                                                        <comment>True Or False</comment>
+							<sort_order>118</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+                                                        <source_model>bannerresponsive/truefalseall</source_model>
+
+						</pagination>	
+					</fields>
+                                        
+                                        
+                                           <fields>
+						<time  translate="label">
+							<label>Time</label>
+                                                        <comment>//milliseconds between the end of the sliding effect and the start of the nex one</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>119</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</time>	
+					</fields>
+                                        
+                                        
+                                           <fields>
+						<transPeriod  translate="label">
+							<label>Time of transperiod</label>
+                                                        <comment>lenght of the sliding effect in milliseconds</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</transPeriod>	
+					</fields>
+                                        
+                                        
+                                        
+                                           <fields>
+						<barPosition  translate="label">
+							<label>Banner barPosition</label>
+                                                        <comment>'bottom', 'left', 'top', 'right'</comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>122</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+                                                        <source_model>bannerresponsive/camerabarposistion</source_model>
+						</barPosition>	
+					</fields>
+                                           <fields>
+						<playPause  translate="label">
+							<label>play/pause buttons</label>
+							<frontend_type>select</frontend_type>
+                                                        <comment>true or false, to display or not the play/pause buttons</comment>
+							<sort_order>123</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+                                                                                                                      <source_model>bannerresponsive/Truefalseall</source_model>
+                                                  <source_model>bannerresponsive/truefalseall</source_model>
+
+						</playPause>	
+					</fields>
+                               
+                                         
+                                           <fields>
+						<thumbnails  translate="label">
+							<label>thumbnails</label>
+                                                        <comment>true, false</comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>125</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+                                                        <source_model>bannerresponsive/truefalseall</source_model>
+                                                </thumbnails>	
+					</fields>
+                                        
+                                         <fields>
+						<bardirection  translate="label">
+							<label>bardirection</label>
+                                                        <comment>'leftToRight', 'rightToLeft', 'topToBottom', 'bottomToTop'</comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>126</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+                                                        <source_model>bannerresponsive/camerabardirection</source_model>
+                                                </bardirection>	
+					</fields>
+                                         <fields>
+                                    
+                                                   <aerrowimage translate="label">
+                                                        <label>Aerrow Image</label>
+                                                        <frontend_type>image</frontend_type>
+                                                        <backend_model>adminhtml/system_config_backend_image</backend_model>
+                                                        <upload_dir config="system/filesystem/media" scope_info="1">adam/images</upload_dir>
+                                                        <base_url type="media" scope_info="1">adam/images</base_url>
+                                                        <sort_order>127</sort_order>
+                                                        <show_in_default>1</show_in_default>
+                                                        <show_in_website>1</show_in_website>
+                                                        <show_in_store>1</show_in_store>
+                                                 </aerrowimage>
+                                        </fields>
+                                       
+                            </cameraslider>		
+			    
+                                
+         
+                     
+                                        
+                                           
+                                    
+			</groups>        
+                        
+                        
+		</bannerresponsive>
+	</sections>
+</config>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+      <reference name="head">
+       <action method="addItem" ifconfig="bannerresponsive/responsive/blockpostion"><type>skin_js</type><name>js/responsiveslider/jquerynocon.js</name></action>
+       <action method="addItem" ifconfig="bannerresponsive/responsive/blockpostion"><type>skin_js</type><name>js/responsiveslider/jquery.js</name></action>
+   
+      <!--ction method="addCss" ifconfig="bannerresponsive/bannertypecollection/bannertype" value="modernslide"><stylesheet>css/responsivebanner/sequencejs-theme.modern-slide-in.css</stylesheet></action>
+       <action method="addItem" ifconfig="bannerresponsive/responsive/blockpostion"><type>skin_js</type><name>js/responsiveslider/jquerynocon.js</name></action>
+       <action method="addItem" ifconfig="bannerresponsive/responsive/blockpostion"><type>skin_js</type><name>js/responsiveslider/jquery.js</name></action>
+       <action method="addItem" ifconfig="bannerresponsive/bannertypecollection/bannertype" value="modernslide"><type>skin_js</type><name>js/responsiveslider/jquery.sequence-min.js</name></action>
+       
+    -->
+    
+</reference>  
+    </default>
+    <bannerresponsive_index_index>
+        <reference name="content">
+            <block type="bannerresponsive/bannerresponsive" name="bannerresponsive" template="bannerresponsive/bannerresponsive.phtml" />
+        </reference>
+    </bannerresponsive_index_index>
+</layout> 

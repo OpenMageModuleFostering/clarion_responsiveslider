@@ -1,0 +1,366 @@
+<?php 
+/*
+ * banner module 
+ * extesnion developing under clarion connect
+ */
+?>
+<?php  if($this->helper('bannerresponsive')->Isbannerenable() == 1 ):?>
+<?php if($this->helper('bannerresponsive')->Bannertype()== "bxslider") :  ?>
+<?php
+/*
+ * added js and css  files you can also put this in xml file under refernces head
+ */
+?>
+<script type='text/javascript' src='<?php echo $this->getSkinUrl("js/responsiveslider/jquerynocon.js")?>'></script> 
+<script type='text/javascript' src='<?php echo $this->getSkinUrl("js/responsiveslider/jquery.bxslider.min.js")?>'></script> 
+<script type='text/javascript' src='<?php echo $this->getSkinUrl("js/responsiveslider/jquery.bxslider.js")?>'></script> 
+<link rel='stylesheet' href='<?php echo $this->getSkinUrl("css/responsivebanner/jquery.bxslider.css");?>' type='text/css'/> 
+<link rel='stylesheet' href='<?php echo $this->getSkinUrl("css/responsivebanner/stylesresposive.css");?>' type='text/css'/> 
+<link rel='stylesheet' href='<?php echo $this->getSkinUrl("css/responsivebanner/jquery.bxslider.css");?>' type='text/css'/> 
+
+<?php
+/*
+ * added js and css  files you can also put this in xml file under refernces head
+ */
+?>
+<?php  $typebanner = $this->helper('bannerresponsive')->getBannerstyle();?>
+<script type="text/javascript">
+var jq=jQuery.noConflict();
+jq(document).ready(function(){
+<?php 
+switch ($typebanner)
+{
+case "Image slideshow with captions":
+?>
+
+jq('.bxsliderthumnail').bxSlider({
+mode:'<?php if($this->mode): echo $this->mode; else: ?>fade<?php endif;?>',
+captions: true,
+pager: <?php if($this->pager): echo $this->pager; else: ?>false<?php endif;?>,
+slideWidth: <?php if($this->slideWidth): echo $this->slideWidth; else: ?>700<?php endif;?>,
+pagerType:'<?php if($this->pagerType): echo $this->pagerType; else: ?>full<?php endif;?>',
+pagerShortSeparator:'<?php if($this->pagerShortSeparator): echo $this->pagerShortSeparator; else: ?>/<?php endif;?>'
+});
+<?php  break;
+case "Auto show with start / stop controls":?>
+jq('.bxsliderthumnail').bxSlider({
+speed:<?php if($this->speed): echo $this->speed; else: ?>3000<?php endif;?>,
+autoControls: true,
+autoDirection: '<?php if($this->autoDirection): echo $this->autoDirection; else: ?>next<?php endif;?>',
+auto:<?php if($this->auto): echo $this->auto; else: ?>false<?php endif;?>,
+mode:'<?php if($this->mode): echo $this->mode; else: ?>fade<?php endif;?>',
+pager: <?php if($this->pager): echo $this->pager; else: ?>false<?php endif;?>,
+slideWidth: <?php if($this->slideWidth): echo $this->slideWidth; else: ?>700<?php endif;?>,
+captions: <?php if($this->caption): echo $this->caption; else: ?>false<?php endif;?>,
+pagerType:'<?php if($this->pagerType): echo $this->pagerType; else: ?>full<?php endif;?>',
+pagerShortSeparator:'<?php if($this->pagerShortSeparator): echo $this->pagerShortSeparator; else: ?>/<?php endif;?>'
+});
+<?php break;
+case "Manual show without infinite loop":?>
+jq('.bxsliderthumnail').bxSlider({
+speed:<?php if($this->speed): echo $this->speed; else: ?>3000<?php endif;?>,
+infiniteLoop: false,
+autoDirection: '<?php if($this->autoDirection): echo $this->autoDirection; else: ?>next<?php endif;?>',
+hideControlOnEnd: <?php if($this->hideControlOnEnd): echo $this->hideControlOnEnd; else: ?>false<?php endif;?>,
+auto: <?php if($this->auto): echo $this->auto; else: ?>false<?php endif;?>,
+mode:'<?php if($this->mode): echo $this->mode; else: ?>fade<?php endif;?>',
+slideWidth: <?php if($this->slideWidth): echo $this->slideWidth; else: ?>700<?php endif;?>,
+pager: <?php if($this->pager): echo $this->pager; else: ?>false<?php endif;?>,
+captions: <?php if($this->caption): echo $this->caption; else: ?>false<?php endif;?>,
+pagerType:'<?php if($this->pagerType): echo $this->pagerType; else: ?>full<?php endif;?>',
+pagerShortSeparator:'<?php if($this->pagerShortSeparator): echo $this->pagerShortSeparator; else: ?>/<?php endif;?>' 
+});
+
+<?php break; case "Slideshow using adaptiveHeight":?>
+jq('.bxsliderthumnail').bxSlider({
+speed:<?php if($this->speed): echo $this->speed; else: ?>3000<?php endif;?>,
+adaptiveHeight: true,
+mode:'<?php if($this->mode): echo $this->mode; else: ?>fade<?php endif;?>',
+autoDirection: '<?php if($this->autoDirection): echo $this->autoDirection; else: ?>next<?php endif;?>',
+auto:<?php if($this->auto): echo $this->auto; else: ?>false<?php endif;?>,
+mode:'<?php if($this->mode): echo $this->mode; else: ?>fade<?php endif;?>',
+slideWidth: <?php if($this->slideWidth): echo $this->slideWidth; else: ?>700<?php endif;?>,
+pager: <?php if($this->pager): echo $this->pager; else: ?>false<?php endif;?>,
+captions: <?php if($this->caption): echo $this->caption; else: ?>false<?php endif;?>,
+pagerType:'<?php if($this->pagerType): echo $this->pagerType; else: ?>full<?php endif;?>',
+pagerShortSeparator:'<?php if($this->pagerShortSeparator): echo $this->pagerShortSeparator; else: ?>/<?php endif;?>'
+});
+<?php break;
+case "Vertical slideshow":?>
+jq('.bxsliderthumnail').bxSlider({
+speed:<?php if($this->speed): echo $this->speed; else: ?>3000<?php endif;?>,
+slideMargin: 5,
+autoDirection: '<?php if($this->autoDirection): echo $this->autoDirection; else: ?>next<?php endif;?>',
+auto:<?php if($this->auto): echo $this->auto; else: ?>false<?php endif;?>,
+mode:'vertical',
+slideWidth: <?php if($this->slideWidth): echo $this->slideWidth; else: ?>700<?php endif;?>,
+pager: <?php if($this->pager): echo $this->pager; else: ?>false<?php endif;?>,
+captions: <?php if($this->caption): echo $this->caption; else: ?>false<?php endif;?>,
+pagerType:'<?php if($this->pagerType): echo $this->pagerType; else: ?>full<?php endif;?>',
+pagerShortSeparator:'<?php if($this->pagerShortSeparator): echo $this->pagerShortSeparator; else: ?>/<?php endif;?>'
+});
+<?php break;
+
+
+
+
+case "Custom next / prev control selectors":?>
+jq('.bxsliderthumnail').bxSlider({
+speed:<?php if($this->speed): echo $this->speed; else: ?>3000<?php endif;?>,
+nextSelector: '#slider-next',
+prevSelector: '#slider-prev',
+autoDirection: '<?php if($this->autoDirection): echo $this->autoDirection; else: ?>next<?php endif;?>',
+nextText:'<?php if($this->nexttext): echo $this->nexttext; else: ?>nextdefault<?php endif;?>',
+prevText: '<?php if($this->pretext): echo $this->pretext; else: ?>predefault<?php endif;?>',
+slideWidth: <?php if($this->slideWidth): echo $this->slideWidth; else: ?>700<?php endif;?>,
+auto:<?php if($this->auto): echo $this->auto; else: ?>false<?php endif;?>,
+mode:'<?php if($this->mode): echo $this->mode; else: ?>fade<?php endif;?>',
+captions: <?php if($this->caption): echo $this->caption; else: ?>false<?php endif;?>,
+pagerType:'<?php if($this->pagerType): echo $this->pagerType; else: ?>full<?php endif;?>',
+pagerShortSeparator:'<?php if($this->pagerShortSeparator): echo $this->pagerShortSeparator; else: ?>/<?php endif;?>'
+});
+<?php break;    
+case "Thumbnail pager":?>
+jq('.bxsliderthumnail').bxSlider({
+speed:<?php if($this->speed): echo $this->speed; else: ?>3000<?php endif;?>,
+pagerCustom: '#bx-pager',
+autoDirection: '<?php if($this->autoDirection): echo $this->autoDirection; else: ?>next<?php endif;?>',
+auto:<?php if($this->auto): echo $this->auto; else: ?>false<?php endif;?>,
+slideWidth: <?php if($this->slideWidth): echo $this->slideWidth; else: ?>700<?php endif;?>,
+auto:<?php if($this->auto): echo $this->auto; else: ?>false<?php endif;?>,
+mode:'<?php if($this->mode): echo $this->mode; else: ?>fade<?php endif;?>',
+pager: <?php if($this->pager): echo $this->pager; else: ?>false<?php endif;?>,
+captions: <?php if($this->caption): echo $this->caption; else: ?>false<?php endif;?>,
+pagerType:'<?php if($this->pagerType): echo $this->pagerType; else: ?>full<?php endif;?>',
+adaptiveHeight: <?php if($this->adaptiveHeight): echo $this->adaptiveHeight; else: ?>false<?php endif;?>,
+pagerShortSeparator:'<?php if($this->pagerShortSeparator): echo $this->pagerShortSeparator; else: ?>/<?php endif;?>'
+});
+
+<?php break; 
+default: ?>
+jq('.bxsliderthumnail').bxSlider({
+speed:<?php if($this->speed): echo $this->speed; else: ?>3000<?php endif;?>,
+slideWidth: <?php if($this->slideWidth): echo $this->slideWidth; else: ?>700<?php endif;?>,
+auto:<?php if($this->auto): echo $this->auto; else: ?>false<?php endif;?>,
+mode:'<?php if($this->mode): echo $this->mode; else: ?>fade<?php endif;?>' ,
+pager: <?php if($this->pager): echo $this->pager; else: ?>false<?php endif;?>,
+captions: <?php if($this->caption): echo $this->caption; else: ?>false<?php endif;?>,
+pagerType:'<?php if($this->pagerType): echo $this->pagerType; else: ?>full<?php endif;?>',
+pagerShortSeparator:'<?php if($this->pagerShortSeparator): echo $this->pagerShortSeparator; else: ?>/<?php endif;?>',
+autoDirection: '<?php if($this->autoDirection): echo $this->autoDirection; else: ?>next<?php endif;?>'
+});
+<?php }
+?>
+});
+</script>
+
+
+
+
+
+<ul class="bxsliderthumnail">
+<?php
+
+$collection = $this->getBannercollection("bxslider")
+              ->setOrder('orderid','ASC');
+foreach($collection as $collection1)
+{
+?>
+<li><img  <?php if($collection1['title']) { ?> title="<?php echo $collection1['title'];?>" <?php } ?>  src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>"/></li>
+
+
+<?php  } ?>
+</ul>
+<?php if($typebanner == "Thumbnail pager"): ?>
+<div id="bx-pager">
+<?php
+$i=0;
+foreach($collection as $collection1)
+{
+?>
+<a data-slide-index="<?php  echo $i;?>" href=""><img src="<?php echo Mage::getBaseUrl("media").'bannerimages/thumbs/'.$collection1['filename'] ?>"/></li></a>
+
+
+<?php  $i++;} ?>
+
+</div>
+<?php elseif($typebanner == "Custom next / prev control selectors"):?>
+<div class="outside">
+<h3>This div is outside of the slider</h3>
+<p><span id="slider-prev"></span> | <span id="slider-next"></span></p>
+</div>
+<?php endif; ?>
+<?php elseif($this->helper('bannerresponsive')->Bannertype()== "modernslide") :?>
+<?php
+/*
+ * added js and css  files you can also put this in xml file under refernces head
+ */?>
+ 
+<script type="text/javascript" src="<?php echo $this->getSkinUrl("js/responsiveslider/jquery.sequence-min.js")?>"></script> 
+
+<link rel="stylesheet" href="<?php echo $this->getSkinUrl("css/responsivebanner/sequencejs-theme.modern-slide-in.css");?>" type="text/css"/> 
+
+
+
+<?php
+/*
+ * added js and css  files you can also put this in xml file under refernces head
+ */?>
+
+<?php    $collection = $this->getBannercollection("modernslide")
+                       ->setOrder('orderid','ASC');?>
+<?php 
+/*
+*  get all admin defined value for modern slider banner
+*/
+?>
+
+<script type="text/javascript">
+var jq=jQuery.noConflict();
+jq(document).ready(function(){
+var options = {
+nextButton:<?php if($this->nextButton): echo $this->nextButton; else: ?>true<?php endif;?>,
+prevButton: <?php if($this->prevButton): echo $this->prevButton; else: ?>true<?php endif;?>,
+pagination: <?php if($this->pagination): echo $this->pagination; else: ?>true<?php endif;?>,
+animateStartingFrameIn:<?php if($this->animateStartingFrameI): echo $this->animateStartingFrameI; else: ?>true<?php endif;?>,
+autoPlay:<?php if($this->autoPlay): echo $this->autoPlay; else: ?>true<?php endif;?>,
+autoPlayDelay:<?php if($this->autoPlayDelay): echo $this->autoPlayDelay; else: ?>3000<?php endif;?>,
+preloader: <?php if($this->preloader): echo $this->preloader; else: ?>true<?php endif;?>,
+preloadTheseFrames: [1],
+preloadTheseImages: [
+"images/tn-model1.png",
+"images/tn-model2.png",
+"images/tn-model3.png"
+]
+};
+
+var mySequence = jq("#sequence").sequence(options).data("sequence");
+});
+</script>      
+<script>
+if (typeof jQuery == 'undefined'){
+document.write(unescape('%3Cscript src="scripts/jquery-min.js" %3E%3C/script%3E'));
+}
+</script>
+
+<div class="sequence-theme">
+<div id="sequence">
+    
+    
+    
+<?php if(Mage::getStoreConfig('bannerresponsive/modersslidersetting/aerrowleftmodernimage'))  {  ?>
+<img class="sequence-prev" src="<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/modersslidersetting/aerrowleftmodernimage');?>" alt="Previous Frame" />
+<?php } else {?>
+<img class="sequence-prev" src="<?php echo $this->getSkinUrl("images/bt-prev.png")?>" alt="Previous Frame" />
+<?php } ?>
+
+<?php if(Mage::getStoreConfig('bannerresponsive/modersslidersetting/aerrowrightmodernimage'))  {  ?>
+<img class="sequence-next" src="<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/modersslidersetting/aerrowrightmodernimage');?>" alt="Next Frame" />
+<?php } else {?>
+<img class="sequence-next" src="<?php echo $this->getSkinUrl("images/bt-next.png")?>" alt="Previous Frame" />
+<?php } ?>
+
+<ul class="sequence-canvas">
+<?php $i=0;foreach($collection as $collection1) 
+{ ?><h2 class="title">Built using Sequence.js</h2>
+<li <?php if($i==0):?>class="animate-in" <?php endif;?>>
+
+<?php if($collection1['title']):?>
+<h2 class="title"><?php echo $collection1['title']; ?></h2>
+<?php endif;?>
+
+<?php if($collection1['content']):?>
+<h3 class="subtitle"><?php echo $collection1['content']; ?></h3>
+<?php endif;?>
+<img class="model" src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>"/></li>
+<?php } ?>
+<!--	<li class="animate-in">
+<h2 class="title">Built using Sequence.js</h2>
+<h3 class="subtitle">The Responsive Slider with Advanced CSS3 Transitions</h3>
+<img class="model" src="http://localhost/corephp/sliders/jquery.bxslider/m/images/model1.png" alt="Model 1" />
+</li>
+-->
+
+</ul>
+
+<ul class="sequence-pagination">
+<?php foreach($collection as $collection1) 
+{ ?>
+<li><img style="max-height: 140px !important; " class="model" src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>"/></li>
+<?php } ?>
+</ul>
+
+</div>
+</div>
+<?php elseif($this->helper('bannerresponsive')->Bannertype()== "cameraslider") :?>
+
+
+   <?php  
+   $collection = $this->getBannercollection("cameraslider")
+                  ->setOrder('orderid','ASC');?>
+    <style>
+		
+		#back_to_camera {
+			clear: both;
+			display: block;
+			height: 80px;
+			line-height: 40px;
+			padding: 20px;
+		}
+		.fluid_container {
+			margin: 0 auto;
+			max-width: 1000px;
+			width: 90%;
+		}
+                
+                .camera_prev > span {background: url("<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/cameraslider/aerrowimage');?>") no-repeat 0 0;
+                                     display: block;height: 40px;width: 40px;}
+                .camera_next > span{background: url("<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/cameraslider/aerrowimage');?>") no-repeat 0 0;display: block;height: 40px;width: 40px;}
+	</style>
+    <link rel='stylesheet' id='camera-css'  href='<?php echo $this->getSkinUrl("css/responsivebanner/camera.css");?>' type='text/css'/> 
+   <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/scripts/jquery.mobile.customized.min.js")?>'></script>
+    <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/scripts/jquery.easing.1.3.js")?>'></script> 
+    <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/scripts/camera.min.js")?>'></script>
+    <script>
+		var jq = jQuery.noConflict();
+                jq(function(){
+			
+			jq('#camera_wrap_1').camera({
+				thumbnails: <?php if(isset($this->thaumbNails)): echo $this->thaumbNails; else: ?>false<?php endif;?>,
+                                pagination :<?php if(isset($this->paginationcameara)): echo $this->paginationcameara; else: ?>false<?php endif;?>,
+                                loader: '<?php if(isset($this->loader)): echo $this->loader; else: ?>pie<?php endif;?>',
+                                height: '<?php if(isset($this->height)): echo $this->height; else: ?>400<?php endif;?>',
+                                time:'<?php if(isset($this->time)): echo $this->time; else: ?>8000<?php endif;?>',
+                                piePosition:'<?php if(isset($this->piePosition)): echo $this->hepiePosition; else: ?>rightTop<?php endif;?>',
+                                barDirection:'<?php if(isset($this->barDirection)): echo $this->barDirection; else: ?>leftToRight<?php endif;?>',
+                                barPosition:'<?php if(isset($this->barPosition)): echo $this->barPosition; else: ?>bottom<?php endif;?>',
+                                fx:'<?php if(isset($this->fx)): echo $this->fx; else: ?>bottom<?php endif;?>'
+
+                                
+			});
+
+		
+		});
+	</script>
+ 
+
+
+    
+	<div class="fluid_container">
+        <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
+            <?php foreach($collection as $collection1) { ?>
+            <div data-thumb="<?php echo Mage::getBaseUrl("media").'bannerimages/thumbs/'.$collection1['filename'] ?>" data-src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>">
+                <div class="camera_caption fadeFromBottom">
+                <?php if($collection1):?>
+                <?php echo $collection1['content']; ?>
+                <?php endif;?>
+                </div>
+            </div>
+            <?php } ?>
+           
+        </div><!-- #camera_wrap_1 -->
+
+
+    </div><!-- .fluid_container -->
+<?php endif;?>
+<?php endif;?>

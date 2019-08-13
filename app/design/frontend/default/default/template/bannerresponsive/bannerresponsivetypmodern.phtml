@@ -1,0 +1,97 @@
+<?php 
+/*
+ * banner module 
+ * extesnion developing under clarion c
+ */
+?>
+<?php  if($this->helper('bannerresponsive')->Isbannerenable() == 1 ):?>
+<?php
+/*
+ * added js and css  files you can also put this in xml file under refernces head
+ */?>
+ 
+<script type="text/javascript" src="<?php echo $this->getSkinUrl("js/responsiveslider/jquery.sequence-min.js")?>"></script> 
+
+<link rel="stylesheet" href="<?php echo $this->getSkinUrl("css/responsivebanner/sequencejs-theme.modern-slide-in.css");?>" type="text/css"/> 
+
+
+
+<?php
+/*
+ * added js and css  files you can also put this in xml file under refernces head
+ */?>
+
+<?php    $collection = $this->getBannercollection("modernslide")
+                       ->setOrder('orderid','ASC');?>
+<?php 
+/*
+*  get all admin defined value for modern slider banner
+*/
+?>
+
+<script type="text/javascript">
+var jq=jQuery.noConflict();
+jq(document).ready(function(){
+var options = {
+nextButton:<?php if($this->nextButton): echo $this->nextButton; else: ?>true<?php endif;?>,
+prevButton: <?php if($this->prevButton): echo $this->prevButton; else: ?>true<?php endif;?>,
+pagination: <?php if($this->pagination): echo $this->pagination; else: ?>true<?php endif;?>,
+animateStartingFrameIn:<?php if($this->animateStartingFrameI): echo $this->animateStartingFrameI; else: ?>true<?php endif;?>,
+autoPlay:<?php if($this->autoPlay): echo $this->autoPlay; else: ?>true<?php endif;?>,
+autoPlayDelay:<?php if($this->autoPlayDelay): echo $this->autoPlayDelay; else: ?>3000<?php endif;?>,
+preloader: <?php if($this->preloader): echo $this->preloader; else: ?>true<?php endif;?>,
+preloadTheseFrames: [1],
+preloadTheseImages: [
+"images/tn-model1.png",
+"images/tn-model2.png",
+"images/tn-model3.png"
+]
+};
+
+var mySequence = jq("#sequenceseperate").sequence(options).data("sequenceseperate");
+});
+</script>      
+<script>
+if (typeof jQuery == 'undefined'){
+document.write(unescape('%3Cscript src="scripts/jquery-min.js" %3E%3C/script%3E'));
+}
+</script>
+
+<div class="sequence-theme" style="clear: both !important;">
+<div id="sequenceseperate">
+    
+    
+    
+
+<img class="sequence-prev" src="<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/modersslidersetting/aerrowleftmodernimage');?>" alt="Previous Frame" />
+<img class="sequence-next" src="<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/modersslidersetting/aerrowrightmodernimage');?>" alt="Next Frame" />
+
+<ul class="sequence-canvas">
+<?php $i=0;foreach($collection as $collection1) 
+{ ?>
+<li <?php if($i==0):?>class="animate-in" <?php endif;?>>
+<?php if($collection1['title']):?><h2 class="title"><?php echo $collection1['title']; ?></h2><?php endif;?>
+<?php if($collection1['content']):?>
+<h3 class="subtitle"><?php echo $collection1['content']; ?></h3>
+<?php endif;?>
+<img class="model" src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>"/></li>
+<?php } ?>
+<!--	<li class="animate-in">
+<h2 class="title">Built using Sequence.js</h2>
+<h3 class="subtitle">The Responsive Slider with Advanced CSS3 Transitions</h3>
+<img class="model" src="http://localhost/corephp/sliders/jquery.bxslider/m/images/model1.png" alt="Model 1" />
+</li>
+-->
+
+</ul>
+
+<ul class="sequence-pagination">
+<?php foreach($collection as $collection1) 
+{ ?>
+<li><img style="max-height: 140px !important; " class="model" src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>"/></li>
+<?php } ?>
+</ul>
+
+</div>
+</div>
+<?php endif;?>

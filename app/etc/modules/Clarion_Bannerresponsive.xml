@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Clarion_Bannerresponsive>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Clarion_Bannerresponsive>
+    </modules>
+</config> 

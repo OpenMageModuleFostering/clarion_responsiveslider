@@ -1,0 +1,75 @@
+<?php 
+/*
+ * banner module 
+ * extesnion developing under clarion c
+ */
+?>
+<?php  if($this->helper('bannerresponsive')->Isbannerenable() == 1 ):?>
+<?php  
+   $collection = $this->getBannercollection("cameraslider")
+                  ->setOrder('orderid','ASC');?>
+    <style>
+		
+		#back_to_camera {
+			clear: both;
+			display: block;
+			height: 80px;
+			line-height: 40px;
+			padding: 20px;
+		}
+		.fluid_container {
+			margin: 0 auto;
+			max-width: 1000px;
+			width: 90%;
+		}
+                
+                .camera_prev > span {background: url("<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/cameraslider/aerrowimage');?>") no-repeat 0 0;
+                                     display: block;height: 40px;width: 40px;}
+                .camera_next > span{background: url("<?php echo Mage::getBaseUrl("media").'adam/images/'.Mage::getStoreConfig('bannerresponsive/cameraslider/aerrowimage');?>") no-repeat 0 0;display: block;height: 40px;width: 40px;}
+	</style>
+    <link rel='stylesheet' id='camera-css'  href='<?php echo $this->getSkinUrl("css/responsivebanner/camera.css");?>' type='text/css'/> 
+   <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/scripts/jquery.mobile.customized.min.js")?>'></script>
+    <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/scripts/jquery.easing.1.3.js")?>'></script> 
+    <script type='text/javascript' src='<?php echo $this->getSkinUrl("js/scripts/camera.min.js")?>'></script>
+    <script>
+		var jq = jQuery.noConflict();
+                jq(function(){
+			
+			jq('#camera_wrap_sepeearatecamera').camera({
+				thumbnails: <?php if(isset($this->thaumbNails)): echo $this->thaumbNails; else: ?>false<?php endif;?>,
+                                pagination :<?php if(isset($this->paginationcameara)): echo $this->paginationcameara; else: ?>false<?php endif;?>,
+                                loader: '<?php if(isset($this->loader)): echo $this->loader; else: ?>pie<?php endif;?>',
+                                height: '<?php if(isset($this->height)): echo $this->height; else: ?>400<?php endif;?>',
+                                time:'<?php if(isset($this->time)): echo $this->time; else: ?>8000<?php endif;?>',
+                                piePosition:'<?php if(isset($this->piePosition)): echo $this->hepiePosition; else: ?>rightTop<?php endif;?>',
+                                barDirection:'<?php if(isset($this->barDirection)): echo $this->barDirection; else: ?>leftToRight<?php endif;?>',
+                                barPosition:'<?php if(isset($this->barPosition)): echo $this->barPosition; else: ?>bottom<?php endif;?>',
+                                fx:'<?php if(isset($this->fx)): echo $this->fx; else: ?>bottom<?php endif;?>'
+
+                                
+			});
+
+		
+		});
+	</script>
+ 
+
+
+    
+	<div class="fluid_container">
+        <div class="camera_wrap camera_azure_skin" id="camera_wrap_sepeearatecamera">
+            <?php foreach($collection as $collection1) { ?>
+            <div data-thumb="<?php echo Mage::getBaseUrl("media").'bannerimages/thumbs/'.$collection1['filename'] ?>" data-src="<?php echo Mage::getBaseUrl("media").'bannerimages/'.$collection1['filename'] ?>">
+                <div class="camera_caption fadeFromBottom">
+                <?php if($collection1):?>
+                <?php echo $collection1['content']; ?>
+                <?php endif;?>
+                </div>
+            </div>
+            <?php } ?>
+           
+        </div><!-- #camera_wrap_1 -->
+
+
+    </div><!-- .fluid_container -->
+<?php endif;?>

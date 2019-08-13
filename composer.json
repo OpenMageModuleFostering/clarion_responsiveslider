@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/clarion_responsiveslider",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "Advanced banner sliders along with bx sliders ,camera sliders and modern sliders.",
+    "authors": [
+    {
+        "name": "kushagra daharwal",
+        "email": "kushagra.daharwal@clariontechnologies.co.in"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

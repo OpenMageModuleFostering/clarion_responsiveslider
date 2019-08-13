@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Clarion_Bannerresponsive>
+            <version>0.1.0</version>
+        </Clarion_Bannerresponsive>
+    </modules>
+    <frontend>
+        <routers>
+            <bannerresponsive>
+                <use>standard</use>
+                <args>
+                    <module>Clarion_Bannerresponsive</module>
+                    <frontName>bannerresponsive</frontName>
+                </args>
+            </bannerresponsive>
+        </routers>
+        <layout>
+            <updates>
+                <bannerresponsive>
+                    <file>bannerresponsive.xml</file>
+                </bannerresponsive>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<bannerresponsive>
+				<use>admin</use>
+				<args>
+					<module>Clarion_Bannerresponsive</module>
+					<frontName>bannerresponsive</frontName>
+				</args>
+			</bannerresponsive>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<bannerresponsive module="bannerresponsive">
+				<title>Bannerresponsive</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<items module="bannerresponsive">
+						<title>Manage Items</title>
+						<sort_order>0</sort_order>
+						<action>bannerresponsive/adminhtml_bannerresponsive</action>
+					</items>
+                                    <bannersetting  module="bannerresponsive">
+                                        <title>Banner Setting</title>
+                                        <sort_order>10</sort_order>
+                                        <action>adminhtml/system_config/edit/section/bannerresponsive</action>
+                                    </bannersetting>
+                            
+                            </children>
+			</bannerresponsive>
+		</menu>
+                
+                <acl>
+          <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <bannerresponsive>
+                                        <title>Bannerresponsive</title>
+                                    </bannerresponsive>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    
+	
+		<layout>
+			<updates>
+				<bannerresponsive>
+					<file>bannerresponsive.xml</file>
+				</bannerresponsive>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <bannerresponsive>
+                <class>Clarion_Bannerresponsive_Model</class>
+                <resourceModel>bannerresponsive_mysql4</resourceModel>
+            </bannerresponsive>
+            <bannerresponsive_mysql4>
+                <class>Clarion_Bannerresponsive_Model_Mysql4</class>
+                <entities>
+                    <bannerresponsive>
+                        <table>bannerresponsive</table>
+                    </bannerresponsive>
+                </entities>
+            </bannerresponsive_mysql4>
+        </models>
+        <resources>
+            <bannerresponsive_setup>
+                <setup>
+                    <module>Clarion_Bannerresponsive</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </bannerresponsive_setup>
+            <bannerresponsive_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </bannerresponsive_write>
+            <bannerresponsive_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </bannerresponsive_read>
+        </resources>
+        <blocks>
+            <bannerresponsive>
+                <class>Clarion_Bannerresponsive_Block</class>
+            </bannerresponsive>
+        </blocks>
+        <helpers>
+            <bannerresponsive>
+                <class>Clarion_Bannerresponsive_Helper</class>
+            </bannerresponsive>
+        </helpers>
+    </global>
+</config>
