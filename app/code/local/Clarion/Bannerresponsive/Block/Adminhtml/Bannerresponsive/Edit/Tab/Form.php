@@ -25,20 +25,26 @@ class Clarion_Bannerresponsive_Block_Adminhtml_Bannerresponsive_Edit_Tab_Form ex
           'required'  => false,
           'name'      => 'orderid',
       ));
-
-
-      $fieldset->addField('filename', 'image', array(
+      
+      $currentbannerdata = Mage::registry('bannerresponsive_data')->getData();
+      $banner_image = $currentbannerdata['filename'];
+      $imgvalue = '<img src="'.Mage::getBaseUrl("media").'bannerimages/thumbs/'.$banner_image.'"/>';
+      if($banner_image){
+          $fieldset->addField('filename', 'file', array(
+              'label'     => Mage::helper('bannerresponsive')->__('File'),
+              'required'  => false,
+              'name'      => 'filename',
+              'note'      => $imgvalue,
+              ));
+      }
+     else {
+          $fieldset->addField('filename', 'file', array(
           'label'     => Mage::helper('bannerresponsive')->__('File'),
           'required'  => false,
           'name'      => 'filename',
-	  ));
-     $fieldset->addType('image', Mage::getConfig()->getBlockClassName('bannerresponsive/adminhtml_entity_helper_image'));
-      // $fieldset->addField('thumbname', 'image', array(
-      //    'label'     => Mage::helper('bannerresponsive')->__('ThumbNail Images'),
-        //  'required'  => false,
-         // 'name'      => 'thumbname',
-	  //));
-		
+          ));
+          }
+
 
        
       $fieldset->addField('status', 'select', array(
