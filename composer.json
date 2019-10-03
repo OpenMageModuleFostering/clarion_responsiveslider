@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/clarion_responsiveslider",
+    "name": "openmage-module-fostering\/clarion_responsiveslider",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Advanced banner slideshow along with bx sliders ,camera sliders and modern sliders",
     "authors": [
